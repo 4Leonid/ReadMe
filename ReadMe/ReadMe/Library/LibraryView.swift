@@ -13,10 +13,7 @@ final class LibraryView: UIView {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    backgroundColor = .red
     setupUI()
-    configureSubviews()
-    setupConstraints()
   }
   
   required init?(coder: NSCoder) {
@@ -27,6 +24,9 @@ final class LibraryView: UIView {
 extension LibraryView {
   func setupUI() {
     libraryTableView.translatesAutoresizingMaskIntoConstraints = false
+    
+    configureSubviews()
+    setupConstraints()
   }
   
   func configureSubviews() {
@@ -35,8 +35,8 @@ extension LibraryView {
   
   func setupConstraints() {
     NSLayoutConstraint.activate([
-      libraryTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-      libraryTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+      libraryTableView.topAnchor.constraint(equalTo: topAnchor),
+      libraryTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
       libraryTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
       libraryTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
     ])

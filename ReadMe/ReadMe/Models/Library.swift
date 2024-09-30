@@ -73,9 +73,4 @@ enum Library: ILibrary {
   }
 }
 
-// !!! Можно вынести в отдельный файл FileManager + Extensions
-extension FileManager {
-  static var documentDirectoryURL: URL {
-    `default`.urls(for: .documentDirectory, in: .userDomainMask)[0]
-  }
-}
+
