@@ -12,9 +12,7 @@
 		BF2ACBE52CA9D2A5005EAD24 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2ACBE42CA9D2A5005EAD24 /* LibraryViewController.swift */; };
 		BF2ACBEA2CA9D2A7005EAD24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2ACBE92CA9D2A7005EAD24 /* Assets.xcassets */; };
 		BF2ACBED2CA9D2A7005EAD24 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BF2ACBEC2CA9D2A7005EAD24 /* Base */; };
-		BF2ACBF52CA9D625005EAD24 /* LibraryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2ACBF42CA9D625005EAD24 /* LibraryTableView.swift */; };
 		BF2ACBF72CA9D691005EAD24 /* LibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2ACBF62CA9D691005EAD24 /* LibraryCell.swift */; };
-		BF2ACBFA2CA9D81A005EAD24 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2ACBF92CA9D81A005EAD24 /* LibraryView.swift */; };
 		BF2ACBFE2CA9D98B005EAD24 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2ACBFC2CA9D98B005EAD24 /* Book.swift */; };
 		BF2ACBFF2CA9D98B005EAD24 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2ACBFD2CA9D98B005EAD24 /* Library.swift */; };
 		BF2ACC022CA9D9DE005EAD24 /* LibraryAddBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2ACC012CA9D9DE005EAD24 /* LibraryAddBookCell.swift */; };
@@ -29,9 +27,7 @@
 		BF2ACBE92CA9D2A7005EAD24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF2ACBEC2CA9D2A7005EAD24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF2ACBEE2CA9D2A7005EAD24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF2ACBF42CA9D625005EAD24 /* LibraryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTableView.swift; sourceTree = "<group>"; };
 		BF2ACBF62CA9D691005EAD24 /* LibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCell.swift; sourceTree = "<group>"; };
-		BF2ACBF92CA9D81A005EAD24 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		BF2ACBFC2CA9D98B005EAD24 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		BF2ACBFD2CA9D98B005EAD24 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		BF2ACC012CA9D9DE005EAD24 /* LibraryAddBookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAddBookCell.swift; sourceTree = "<group>"; };
@@ -85,8 +81,6 @@
 			children = (
 				BF2ACC002CA9D9C0005EAD24 /* Cells */,
 				BF2ACBE42CA9D2A5005EAD24 /* LibraryViewController.swift */,
-				BF2ACBF92CA9D81A005EAD24 /* LibraryView.swift */,
-				BF2ACBF42CA9D625005EAD24 /* LibraryTableView.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -187,11 +181,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF2ACBFA2CA9D81A005EAD24 /* LibraryView.swift in Sources */,
 				BF2ACBF72CA9D691005EAD24 /* LibraryCell.swift in Sources */,
 				BF2ACBFE2CA9D98B005EAD24 /* Book.swift in Sources */,
 				BF2ACBE52CA9D2A5005EAD24 /* LibraryViewController.swift in Sources */,
-				BF2ACBF52CA9D625005EAD24 /* LibraryTableView.swift in Sources */,
 				BF2ACBFF2CA9D98B005EAD24 /* Library.swift in Sources */,
 				BF2ACBE12CA9D2A5005EAD24 /* AppDelegate.swift in Sources */,
 				BF2ACC052CAAAA64005EAD24 /* FileManager+Extensions.swift in Sources */,

@@ -7,50 +7,81 @@
 
 import UIKit
 
+enum TableRow: Int, CaseIterable {
+  case addBook
+  case book
+}
+
 class LibraryViewController: UIViewController {
   
   // MARK: - UIElements
-
+  private lazy var tableView =  UITableView()
   
-  
-//  // MARK: - Private properties
-  
-// var libraryView: LibraryView {
-//    view as! LibraryView
-//  }
-
-  override func loadView() {
-    view = LibraryView(frame: UIScreen.main.bounds)
-  }
+  private let books = Library.books
   
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "My Library"
-    view.backgroundColor = .white
+    setupViews()
+  }
+}
+
+// MARK: - UITableViewDataSource
+extension LibraryViewController: UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    books.count + 1
   }
   
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    //libraryView.reload()
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    switch indexPath.row {
+    case 0:
+      guard let addBookCell = tableView.dequeueReusableCell(withIdentifier: LibraryAddBookCell.reuseIdentifier, for: indexPath) as? LibraryAddBookCell else { return UITableViewCell() }
+      return addBookCell
+   default:
+      guard let bookCell = tableView.dequeueReusableCell(withIdentifier: LibraryCell.reuseIdentifier, for: indexPath) as? LibraryCell else { return UITableViewCell() }
+      let book = books[indexPath.row - 1]
+      bookCell.configure(with: book)
+      return bookCell
+    }
+  }
+}
+
+// MARK: - UITableViewDelegate
+extension LibraryViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
   }
 }
 
 //  MARK: - Set Views and Constraints
-//private extension LibraryViewController {
-//  func setupUI() {
-//    libraryView.translatesAutoresizingMaskIntoConstraints = false
-//  }
-//  
-//  func configureSubviews() {
-//    view.addSubview(libraryView)
-//  }
-//  
-//  func setupConstraints() {
-//    libraryView.edgesToSuperview()
-//    NSLayoutConstraint.activate([
-//      // !!! ???
-//    ])
-//  }
-//}
+extension LibraryViewController {
+  
+  func setupViews() {
+    // TableView
+    tableView.register(LibraryCell.self, forCellReuseIdentifier: LibraryCell.reuseIdentifier)
+    tableView.register(LibraryAddBookCell.self, forCellReuseIdentifier: LibraryAddBookCell.reuseIdentifier)
+    tableView.rowHeight = LibraryCell.rowHeigh
+    
+    view.addSubview(tableView)
+    setupConstraints()
+    setupDelegates()
+  }
+  
+  
+  func setupConstraints() {
+    tableView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      tableView.topAnchor.constraint(equalTo: view.topAnchor),
+      tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+    ])
+  }
+  
+  func setupDelegates() {
+    tableView.dataSource = self
+    tableView.delegate = self
+  }
+}
 
 
