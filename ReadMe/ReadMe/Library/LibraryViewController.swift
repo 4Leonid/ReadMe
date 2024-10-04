@@ -33,16 +33,19 @@ extension LibraryViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    switch indexPath.row {
-    case 0:
+    let cell: UITableViewCell
+    let tableRow = TableRow(rawValue: indexPath.row)
+    switch tableRow {
+    case .addBook:
       guard let addBookCell = tableView.dequeueReusableCell(withIdentifier: LibraryAddBookCell.reuseIdentifier, for: indexPath) as? LibraryAddBookCell else { return UITableViewCell() }
-      return addBookCell
+      cell = addBookCell
    default:
       guard let bookCell = tableView.dequeueReusableCell(withIdentifier: LibraryCell.reuseIdentifier, for: indexPath) as? LibraryCell else { return UITableViewCell() }
       let book = books[indexPath.row - 1]
       bookCell.configure(with: book)
-      return bookCell
+      cell = bookCell
     }
+    return cell
   }
 }
 
