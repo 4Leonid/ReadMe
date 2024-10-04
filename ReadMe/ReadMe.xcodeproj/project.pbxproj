@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		BF2ACBFF2CA9D98B005EAD24 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2ACBFD2CA9D98B005EAD24 /* Library.swift */; };
 		BF2ACC022CA9D9DE005EAD24 /* LibraryAddBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2ACC012CA9D9DE005EAD24 /* LibraryAddBookCell.swift */; };
 		BF2ACC052CAAAA64005EAD24 /* FileManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2ACC042CAAAA64005EAD24 /* FileManager+Extensions.swift */; };
+		BF9979A62CB031E000BE797D /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9979A52CB031E000BE797D /* UITextView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +33,12 @@
 		BF2ACBFD2CA9D98B005EAD24 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		BF2ACC012CA9D9DE005EAD24 /* LibraryAddBookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAddBookCell.swift; sourceTree = "<group>"; };
 		BF2ACC042CAAAA64005EAD24 /* FileManager+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extensions.swift"; sourceTree = "<group>"; };
+		BF9979A52CB031E000BE797D /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		BF9979992CB02CBD00BE797D /* DetailBook */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DetailBook; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BF2ACBDA2CA9D2A5005EAD24 /* Frameworks */ = {
@@ -64,6 +70,7 @@
 		BF2ACBDF2CA9D2A5005EAD24 /* ReadMe */ = {
 			isa = PBXGroup;
 			children = (
+				BF9979992CB02CBD00BE797D /* DetailBook */,
 				BF2ACC032CAAAA3C005EAD24 /* Helpers */,
 				BF2ACBFB2CA9D955005EAD24 /* Models */,
 				BF2ACBE02CA9D2A5005EAD24 /* AppDelegate.swift */,
@@ -106,6 +113,7 @@
 		BF2ACC032CAAAA3C005EAD24 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				BF9979A52CB031E000BE797D /* UITextView+Extension.swift */,
 				BF2ACC042CAAAA64005EAD24 /* FileManager+Extensions.swift */,
 			);
 			path = Helpers;
@@ -125,6 +133,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				BF9979992CB02CBD00BE797D /* DetailBook */,
 			);
 			name = ReadMe;
 			productName = ReadMe;
@@ -186,6 +197,7 @@
 				BF2ACBE52CA9D2A5005EAD24 /* LibraryViewController.swift in Sources */,
 				BF2ACBFF2CA9D98B005EAD24 /* Library.swift in Sources */,
 				BF2ACBE12CA9D2A5005EAD24 /* AppDelegate.swift in Sources */,
+				BF9979A62CB031E000BE797D /* UITextView+Extension.swift in Sources */,
 				BF2ACC052CAAAA64005EAD24 /* FileManager+Extensions.swift in Sources */,
 				BF2ACC022CA9D9DE005EAD24 /* LibraryAddBookCell.swift in Sources */,
 				BF2ACBE32CA9D2A5005EAD24 /* SceneDelegate.swift in Sources */,

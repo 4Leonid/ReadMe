@@ -24,6 +24,11 @@ class LibraryViewController: UIViewController {
     title = "My Library"
     setupViews()
   }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    tableView.reloadData()
+  }
 }
 
 // MARK: - UITableViewDataSource
@@ -52,7 +57,23 @@ extension LibraryViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension LibraryViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    tableView.deselectRow(at: indexPath, animated: true)
+    let tableRow = TableRow(rawValue: indexPath.row)
+    switch tableRow {
+    case .addBook:
+      break
+    default:
+      showDetailViewController(for: indexPath)
+    }
+  }
+}
+
+// MARK: - Private Methods
+extension LibraryViewController {
+  private func showDetailViewController(for indexPath: IndexPath) {
+    let detailVC = DetailViewController()
+    let book = books[indexPath.row - 1]
+    detailVC.book = book
+    navigationController?.pushViewController(detailVC, animated: true)
   }
 }
 
