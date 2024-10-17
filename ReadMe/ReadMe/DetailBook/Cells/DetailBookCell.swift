@@ -56,6 +56,7 @@ private extension DetailBookCell {
     hStackView.distribution = .fill
     hStackView.alignment = .center
     hStackView.spacing = 8
+    hStackView.isBaselineRelativeArrangement = true
     
     // Vertical StackView
     vStackView.translatesAutoresizingMaskIntoConstraints = false

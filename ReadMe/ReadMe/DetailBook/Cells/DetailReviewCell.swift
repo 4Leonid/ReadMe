@@ -43,7 +43,7 @@ private extension DetailReviewCell {
     previewText.text = "Review..."
     previewText.font = .preferredFont(forTextStyle: .body)
     previewText.textColor = .label
-    previewText.isScrollEnabled = false
+    //previewText.isScrollEnabled = false
     previewText.backgroundColor = .secondarySystemBackground
     previewText.addDoneButton()
   }

@@ -41,6 +41,8 @@ extension LibraryAddBookCell {
     
     bookImage.translatesAutoresizingMaskIntoConstraints = false
     bookImage.image = UIImage(systemName: "book.circle")
+    bookImage.preferredSymbolConfiguration = .init(weight: .light)
+    bookImage.contentMode = .scaleAspectFit
     
     titleLabel.translatesAutoresizingMaskIntoConstraints = false
     titleLabel.text = "Add new book"

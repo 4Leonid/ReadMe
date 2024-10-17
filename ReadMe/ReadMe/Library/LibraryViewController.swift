@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum TableRow: Int, CaseIterable {
+enum TableSection: Int, CaseIterable {
   case addBook
   case book
 }
@@ -33,20 +33,25 @@ class LibraryViewController: UIViewController {
 
 // MARK: - UITableViewDataSource
 extension LibraryViewController: UITableViewDataSource {
+  
+  func numberOfSections(in tableView: UITableView) -> Int {
+    2
+  }
+  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    books.count + 1
+    section == 0 ? 1 : books.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell: UITableViewCell
-    let tableRow = TableRow(rawValue: indexPath.row)
+    let tableRow = TableSection(rawValue: indexPath.section)
     switch tableRow {
     case .addBook:
       guard let addBookCell = tableView.dequeueReusableCell(withIdentifier: LibraryAddBookCell.reuseIdentifier, for: indexPath) as? LibraryAddBookCell else { return UITableViewCell() }
       cell = addBookCell
    default:
       guard let bookCell = tableView.dequeueReusableCell(withIdentifier: LibraryCell.reuseIdentifier, for: indexPath) as? LibraryCell else { return UITableViewCell() }
-      let book = books[indexPath.row - 1]
+      let book = books[indexPath.row]
       bookCell.configure(with: book)
       cell = bookCell
     }
@@ -56,11 +61,16 @@ extension LibraryViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension LibraryViewController: UITableViewDelegate {
+  
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    section == 1 ? "Read Me!" : nil
+  }
+  
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let tableRow = TableRow(rawValue: indexPath.row)
+    let tableRow = TableSection(rawValue: indexPath.row)
     switch tableRow {
     case .addBook:
-      break
+      showNewBookViewController(for: indexPath)
     default:
       showDetailViewController(for: indexPath)
     }
@@ -71,9 +81,14 @@ extension LibraryViewController: UITableViewDelegate {
 extension LibraryViewController {
   private func showDetailViewController(for indexPath: IndexPath) {
     let detailVC = DetailViewController()
-    let book = books[indexPath.row - 1]
+    let book = books[indexPath.row]
     detailVC.book = book
     navigationController?.pushViewController(detailVC, animated: true)
+  }
+  
+  private func showNewBookViewController(for indexPath: IndexPath) {
+    let newBookVC = NewBookViewController()
+    navigationController?.pushViewController(newBookVC, animated: true)
   }
 }
 

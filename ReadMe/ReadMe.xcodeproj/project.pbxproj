@@ -38,6 +38,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		BF9979992CB02CBD00BE797D /* DetailBook */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DetailBook; sourceTree = "<group>"; };
+		BFDB56C42CB71252000899A8 /* NewBook */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = NewBook; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,12 +71,13 @@
 		BF2ACBDF2CA9D2A5005EAD24 /* ReadMe */ = {
 			isa = PBXGroup;
 			children = (
+				BFDB56C42CB71252000899A8 /* NewBook */,
 				BF9979992CB02CBD00BE797D /* DetailBook */,
+				BF2ACBF82CA9D743005EAD24 /* Library */,
 				BF2ACC032CAAAA3C005EAD24 /* Helpers */,
 				BF2ACBFB2CA9D955005EAD24 /* Models */,
 				BF2ACBE02CA9D2A5005EAD24 /* AppDelegate.swift */,
 				BF2ACBE22CA9D2A5005EAD24 /* SceneDelegate.swift */,
-				BF2ACBF82CA9D743005EAD24 /* Library */,
 				BF2ACBE92CA9D2A7005EAD24 /* Assets.xcassets */,
 				BF2ACBEB2CA9D2A7005EAD24 /* LaunchScreen.storyboard */,
 				BF2ACBEE2CA9D2A7005EAD24 /* Info.plist */,
@@ -136,6 +138,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				BF9979992CB02CBD00BE797D /* DetailBook */,
+				BFDB56C42CB71252000899A8 /* NewBook */,
 			);
 			name = ReadMe;
 			productName = ReadMe;

@@ -62,6 +62,7 @@ private extension LibraryCell {
     vStackView.alignment = .fill
     vStackView.isBaselineRelativeArrangement = true
     vStackView.spacing = 24
+    vStackView.isBaselineRelativeArrangement = true
     
     bookThumbnail.translatesAutoresizingMaskIntoConstraints = false
     let bookConfiguration = UIImage.SymbolConfiguration(weight: .light)
